@@ -1,0 +1,52 @@
+import random
+
+ROCK = """
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+"""
+
+PAPER = """
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+"""
+
+SCISSORS = """
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+"""
+
+hands = [ROCK, PAPER, SCISSORS]
+
+computer = random.choice(hands)
+your_choice = random.choice(hands)
+
+print("Computer chose:")
+print(computer)
+
+print("Your choice is:")
+print(your_choice)
+
+if computer == your_choice:
+    print("It's a DRAW")
+
+elif (
+    (your_choice == "rock" and computer == "scissors") or
+    (your_choice == "paper" and computer == "rock") or
+    (your_choice == "scissors" and computer == "paper")
+):
+    print("YOU WIN")
+
+else:
+    print("YOU LOSE")
